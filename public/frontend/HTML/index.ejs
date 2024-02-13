@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rean</title>
+    <link rel="stylesheet" href="/frontend/CSS/style.css" />
+    <link rel="shortcut icon" type="neet1.png" href="neet1.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#b5d6ee",
+                        primary_darker: "#a1c7e4",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+    <nav style="top: 0; left: 0; width: 100%">
+        <div class="flex flex-row justify-center items-center p-4">
+            <div class="flex flex-row justify-center items-center">
+                <a href="/">
+                    <img src="https://media.discordapp.net/attachments/1155453973256474714/1170004307505061898/neet1.jpg?ex=6557766c&is=6545016c&hm=70aa0d982e032ae5f338727a1db14b7b447438b8d2d26e625eccd89c3695d0e3&=&width=550&height=550"
+                        alt="Logo" class="w-32 h-32 mx-2 rounded-full" />
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="mt-80 justify-center">
+        <h1 class="text-6xl text-center font-bold text-white">rean</h1>
+        <h1 class="text-2xl text-center text-gray-400">
+            Another edgy <span class="text-primary">discord bot</span>
+        </h1>
+
+        <div class="flex justify-center mt-10">
+            <button
+                class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-7 border-2 border-white hover:border-transparent rounded-xl transition duration-300 ease-in-out">
+                <a
+                    href="https://discord.com/api/oauth2/authorize?client_id=1160559569240588318&permissions=8&scope=bot%20applications.commands">
+                    add bot
+                </a>
+            </button>
+            <button
+                class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-7 border-2 border-white hover:border-transparent rounded-xl ml-4 transition duration-300 ease-in-out light">
+                <a> dashboard panel </a>
+            </button>
+            <button
+                class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-7 border-2 border-white hover:border-transparent rounded-xl ml-4 transition duration-300 ease-in-out light">
+                <a href="https://discord.gg/Qhk3BaraYg"> support server </a>
+            </button>
+        </div>
+
+        <hr class="my-44 outline-gray-200 w-1/3 m-auto" />
+        <h2 class="text-3xl font-bold text-white text-center">
+            <span class="text-primary">
+                <%= guilds %>
+            </span> servers <br>
+            <span class="text-primary">
+                <%= users %>
+            </span> users <br>
+            <span class="text-primary">
+                <%= commands %>
+            </span> commands <br>
+
+            <div class="my-20">
+                <h2 class="text-3xl font-bold text-white text-center">
+                    <span class="text-primary">rean</span> Features
+                </h2>
+                <div class="flex flex-wrap justify-center mt-10">
+                    <div class="cartoon-box">
+                        <h2>Stability</h2>
+                        <p>our bot is stable and available 24/7</p>
+                    </div>
+                    <div class="cartoon-box">
+                        <h2>Support server</h2>
+                        <p>Our support is ready to help you when you need to</p>
+                    </div>
+                    <div class="cartoon-box">
+                        <h2>Easy configuration</h2>
+                        <p>
+                            Our bot is very easy to configurate, if you need
+                            help you can join our support server!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-20">
+                <h2 class="text-3xl font-bold text-white text-center">
+                    <span class="text-primary">rean</span> Team
+                </h2>
+                <div class="flex flex-wrap justify-center mt-10 text-center">
+                    <div class="team-member">
+                        <img src="https://cdn.discordapp.com/avatars/766271467801018369/993ea3e044641a2b83fb8f948e7f7ac6.webp?size=4096"
+                            alt="Team Member 1" class="rounded-full mx-12 w-64 m-auto" />
+                        <div class="text-center">
+                            <h3 class="text-lg font-bold text-white mt-4 flex items-center justify-center">
+                                Aruuvi
+                                <% if (AruuviMember.presence?.status==='dnd' ) { %>
+                                    <img src="https://cdn.discordapp.com/emojis/1165601356044849234.webp?size=32&quality=lossless"
+                                        alt="dnd" class="ml-2" />
+                                    <% } else if (AruuviMember.presence?.status==='online' ) { %>
+                                        <img src="https://cdn.discordapp.com/emojis/1165601358632722543.webp?size=32&quality=lossless"
+                                            alt="online" class="ml-2" />
+                                        <% } else if (AruuviMember.presence?.status==='afk' ) { %>
+                                            <img src="https://cdn.discordapp.com/emojis/1165601363007393853.webp?size=32&quality=lossless"
+                                                alt="afk" class="ml-2" />
+                                            <% } else if (AruuviMember.presence?.status==='offline' ) { %>
+                                                <img src="https://cdn.discordapp.com/emojis/1165601360746659891.webp?size=32&quality=lossless"
+                                                    alt="offline" class="ml-2" />
+                                                <% } else { %>
+                                                    <p>???</p>
+                                                    <% } %>
+                            </h3>
+                        </div>
+                        <p class="text-gray-400 mb-10">Developer</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://cdn.discordapp.com/avatars/485414045516562443/a0f4af163f4475e72e7e407313464958.webp?size=4096"
+                            alt="Team Member 2" class="rounded-full mx-12 w-64 m-auto" />
+                        <div class="text-center">
+                            <h3 class="text-lg font-bold text-white mt-4 flex items-center justify-center">
+                                @doniczka
+                                <% if (doniczkaMember.presence?.status==='dnd' ) { %>
+                                    <img src="https://cdn.discordapp.com/emojis/1165601356044849234.webp?size=32&quality=lossless"
+                                        alt="dnd" class="ml-2" />
+                                    <% } else if (doniczkaMember.presence?.status==='online' ) { %>
+                                        <img src="https://cdn.discordapp.com/emojis/1165601358632722543.webp?size=32&quality=lossless"
+                                            alt="online" class="ml-2" />
+                                        <% } else if (doniczkaMember.presence?.status==='afk' ) { %>
+                                            <img src="https://cdn.discordapp.com/emojis/1165601363007393853.webp?size=32&quality=lossless"
+                                                alt="afk" class="ml-2" />
+                                            <% } else if (doniczkaMember.presence?.status==='offline' ) { %>
+                                                <img src="https://cdn.discordapp.com/emojis/1165601360746659891.webp?size=32&quality=lossless"
+                                                    alt="offline" class="ml-2" />
+                                                <% } else { %>
+                                                    <p>???</p>
+                                                    <% } %>
+                            </h3>
+                        </div>
+                        <p class="text-gray-400 mb-10">Developer</p>
+                    </div>
+                </div>
+            </div>
+            <footer class="mt-5">
+                <div
+                    class="container flex flex-col items-center justify-center p-6 mx-auto space-y-4 sm:space-y-0 sm:flex-row">
+                    <p class="text-sm text-gray-600 dark:text-gray-300">© Copyright 2023.
+                        All Rights Reserved.</p>
+                </div>
+            </footer>
+</body>
+</html>
